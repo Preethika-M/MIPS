@@ -5,6 +5,7 @@ This project implements a 32-bit MIPS CPU core with a 5-stage pipeline architect
 
 
 **Overview**
+
 The MIPS core is designed to handle R-type, I-type, and J-type instructions, supporting a 32-bit instruction set. The CPU has five main pipeline stages:
 
 -Instruction Fetch (IF)
@@ -15,6 +16,7 @@ The MIPS core is designed to handle R-type, I-type, and J-type instructions, sup
 The pipeline stages are connected by registers such as IF/ID, ID/EX, EX/MEM, and MEM/WB. Additionally, the core has hazard detection and data forwarding units to avoid data hazards and enable efficient instruction execution without unnecessary stalls.
 
 **Features**
+
 5-Stage Pipeline: The processor pipeline consists of the following stages: IF, ID, EX, MEM, WB, with corresponding pipeline registers between them.
 Hazard Detection Unit: Detects data hazards during pipeline execution and introduces stalls as needed to prevent data corruption.
 Data Forwarding Unit: Forwards data from later stages to earlier stages to avoid stalls caused by data hazards when possible.
@@ -23,6 +25,7 @@ Instruction Support: Includes ALU operations (ADD, SUB, AND, OR, etc.), memory o
 Memory and Registers: The design includes 32 general-purpose registers and 1024 memory locations.
 
 **Instruction Set**
+
 The processor supports the following instruction types:
 
 R-Type (Register-Register ALU Operations): ADD, SUB, AND, OR, etc.
@@ -31,6 +34,7 @@ Branch Instructions: BEQZ (branch if equal to zero), BNEQZ (branch if not equal 
 HLT: Halts the CPU.
 
 **Pipeline Stages**
+
 1. Instruction Fetch (IF)
 Fetches the instruction from memory based on the current program counter (PC).
 If a branch is taken (resolved in the EX stage), the PC is updated accordingly.
@@ -51,8 +55,10 @@ Loads data from memory for load instructions.
 Hazard Detection and Data Forwarding
 Hazard Detection: Detects when an instruction depends on the result of a previous instruction still in the pipeline. In such cases, the pipeline is stalled or forwarded to prevent incorrect execution.
 Data Forwarding: Implements a mechanism to forward data directly from the EX or MEM stage to the ID stage if the next instruction depends on the result of the current instruction.
-**
-Testbench**
+
+
+**Testbench**
+
 The design includes a testbench to verify the functionality of the MIPS processor core. It tests:
 
 Arithmetic operations (ADD, SUB, MUL, etc.).
@@ -63,10 +69,12 @@ Forwarding and hazard detection functionality.
 
 
 **Future Enhancements**
+
 Add more complex instructions (e.g., floating-point operations).
 Improve hazard detection for control hazards (branches).
 Add support for pipeline flushing during branch misprediction.
 
 
 **Conclusion**
+
 This MIPS 32 CPU core is an efficient, pipelined processor with hazard detection and data forwarding, making it capable of executing instructions with minimal stalls and high throughput. The design demonstrates the core principles of the RISC architecture and pipelined processor design.
