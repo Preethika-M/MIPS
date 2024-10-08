@@ -1,7 +1,7 @@
 MIPS 32 CPU Core with Hazard Detection and Data Forwarding
 This project implements a 32-bit MIPS CPU core with a 5-stage pipeline architecture, featuring hazard detection and data forwarding units. The MIPS architecture is based on the Reduced Instruction Set Computer (RISC) philosophy, making it highly efficient for embedded systems and various other applications.
 
-##Overview
+-[Overview]
 The MIPS core is designed to handle R-type, I-type, and J-type instructions, supporting a 32-bit instruction set. The CPU has five main pipeline stages:
 
 -Instruction Fetch (IF)
